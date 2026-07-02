@@ -13,3 +13,12 @@ class StudentViewSet(viewsets.ModelViewSet):
         if self.action == 'create':
             return StudentCreateSerializer
         return StudentSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = StudentCreateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        student = serializer.save()
+        return Response(
+            StudentSerializer(student).data,
+            status=status.HTTP_201_CREATED
+        )
