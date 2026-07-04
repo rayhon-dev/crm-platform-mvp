@@ -20,10 +20,12 @@ class AssignmentViewSet(viewsets.ModelViewSet):
     search_fields = ['title']
 
     def get_permissions(self):
-        if self.action in ['list', 'retrieve']:
+        if self.action in ['list', 'retrieve', 'submissions']:
             return [IsAuthenticated()]
-        if self.action in ['create', 'update', 'partial_update', 'delete']:
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
             return [IsAdminOrTeacher()]
+        if self.action == 'submit':
+            return [IsAuthenticated()]
         return [IsAdmin()]
 
     def get_serializer_class(self):
@@ -45,13 +47,13 @@ class AssignmentViewSet(viewsets.ModelViewSet):
     def submit(self, request, pk=None):
         assignment = self.get_object()
 
-        if not hasattr(request.user, 'student_profile'):
+        try:
+            student = request.user.student_profile
+        except Exception:
             return Response(
                 {'detail': 'Faqat studentlar topshiriq yuborishi mumkin.'},
                 status=status.HTTP_403_FORBIDDEN
             )
-
-        student = request.user.student_profile
 
         if Submission.objects.filter(assignment=assignment, student=student).exists():
             return Response(
@@ -66,7 +68,6 @@ class AssignmentViewSet(viewsets.ModelViewSet):
             SubmissionSerializer(submission).data,
             status=status.HTTP_201_CREATED
         )
-
     # Topshiriq javoblarini ko'rish
     @action(detail=True, methods=['get'], permission_classes=[IsAdminOrTeacher])
     def submissions(self, request, pk=None):
