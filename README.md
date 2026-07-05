@@ -134,55 +134,54 @@ Seed dan keyin quyidagi foydalanuvchilar avtomatik yaratiladi:
 
 ## 🔑 Asosiy API Endpointlar
 POST   /api/auth/login/              → Tizimga kirish
+
 POST   /api/auth/refresh/            → Tokenni yangilash
+
 GET    /api/auth/me/                 → O'z ma'lumotlari
+
 GET    /api/students/                → O'quvchilar ro'yxati
+
 POST   /api/students/                → O'quvchi yaratish
+
 GET    /api/teachers/                → O'qituvchilar ro'yxati
+
 POST   /api/teachers/                → O'qituvchi yaratish
+
 GET    /api/courses/                 → Kurslar ro'yxati
+
 POST   /api/courses/                 → Kurs yaratish
+
 GET    /api/groups/                  → Guruhlar ro'yxati
+
 POST   /api/groups/                  → Guruh yaratish
+
 POST   /api/groups/{id}/add_student/ → Guruhga o'quvchi qo'shish
+
 POST   /api/groups/{id}/add_schedule/→ Guruhga jadval qo'shish
+
 POST   /api/attendance/bulk/         → Ommaviy davomat belgilash
+
 GET    /api/attendance/              → Davomat ro'yxati
+
 GET    /api/assignments/             → Topshiriqlar ro'yxati
+
 POST   /api/assignments/             → Topshiriq yaratish
+
 POST   /api/assignments/{id}/submit/ → Topshiriq yuborish
+
 POST   /api/submissions/{id}/grade/  → Baho qo'yish
+
 GET    /api/payments/                → To'lovlar ro'yxati
+
 POST   /api/payments/                → To'lov kiritish
+
 GET    /api/payments/debtors/        → Qarzdorlar ro'yxati
+
 GET    /api/payments/summary/        → Daromad statistikasi
+
 GET    /api/dashboard/               → Umumiy statistika
 
----
 
-## 🗂 Loyiha Strukturasi
-crm-platform-mvp/
-├── apps/
-│   ├── users/          → Foydalanuvchilar, auth, permissions
-│   ├── students/       → O'quvchilar
-│   ├── teachers/       → O'qituvchilar
-│   ├── courses/        → Kurslar
-│   ├── groups/         → Guruhlar, jadval
-│   ├── attendance/     → Davomat
-│   ├── assignments/    → Topshiriqlar, javoblar, baholar
-│   ├── payments/       → To'lovlar
-│   └── notifications/  → Bildirishnomalar
-├── config/
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── .env.example
-├── docker-compose.yml
-├── Dockerfile
-├── manage.py
-└── requirements.txt
-
----
 
 <div align="center">
 
