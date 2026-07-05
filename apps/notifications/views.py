@@ -16,15 +16,11 @@ class NotificationViewSet(viewsets.ModelViewSet):
             return Notification.objects.all()
         return Notification.objects.filter(user=user)
 
-    def get_permissions(self):
-        if self.action in ['list', 'retrieve', 'my', 'read']:
-            return [IsAuthenticated()]
-        if self.action == 'create':
-            return [IsAdmin()]
-        return [IsAdmin()]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve', 'read', 'read_all']:
+            return [IsAuthenticated()]
+        return [IsAdmin()]
 
     # O'qildi deb belgilash
     @action(detail=True, methods=['patch'], permission_classes=[IsAuthenticated])
