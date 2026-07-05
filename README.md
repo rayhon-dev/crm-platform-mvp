@@ -2,236 +2,54 @@
 
 # 🎓 EduCRM
 
-<p align="center">
-  <b>Choose a language to view the project description:</b>
-</p>
+**O'quv markazlari uchun kompleks boshqaruv tizimi**
 
-[![English](https://img.shields.io/badge/GB-English-blue?style=for-the-badge)](README.md#english)
-[![Russian](https://img.shields.io/badge/RU-Русский-blue?style=for-the-badge)](README.md#russian)
-[![Uzbek](https://img.shields.io/badge/UZ-O'zbekcha-blue?style=for-the-badge)](README.md#uzbek)
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)
+![Django](https://img.shields.io/badge/Django-6.0-green?style=for-the-badge&logo=django)
+![DRF](https://img.shields.io/badge/DRF-3.x-red?style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue?style=for-the-badge&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-latest-blue?style=for-the-badge&logo=docker)
 
 </div>
 
 ---
 
-## English
+## 📌 Loyiha haqida
 
-<div id="english">
+EduCRM — o'quv markazlardagi barcha jarayonlarni bitta tizimga yig'ish uchun mo'ljallangan backend API. O'quvchilar, o'qituvchilar, guruhlar, davomat, topshiriqlar va to'lovlarni boshqarish imkonini beradi.
 
-### 🎓 EduCRM — Learning Center Management System
+---
 
-A comprehensive CRM system for educational centers built with Django REST Framework.
+## 🚀 Imkoniyatlar
 
-#### 🚀 Features
-
-- **Authentication** — JWT-based auth with role-based access control
-- **Students** — Full CRUD with profile management
-- **Teachers** — Full CRUD with subject and salary tracking
-- **Courses** — Course management with pricing
-- **Groups** — Group management with schedule and student enrollment
-- **Attendance** — Bulk attendance tracking with statistics
-- **Assignments** — Assignment creation, submission, and grading system
-- **Payments** — Manual payment tracking with debt monitoring
-- **Notifications** — User notification system
-- **Dashboard** — Admin statistics overview
-
-#### 🛠 Tech Stack
-
-| Technology | Version |
+| Modul | Tavsif |
 |---|---|
-| Python | 3.12 |
-| Django | 6.0 |
-| Django REST Framework | 3.x |
-| PostgreSQL | 17 |
-| JWT | djangorestframework-simplejwt |
-| Docker | latest |
-
-#### 📦 Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/rayhon-dev/crm-platform-mvp.git
-cd crm-platform-mvp
-```
-
-**2. Create virtual environment**
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-```
-
-**3. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**4. Setup environment variables**
-```bash
-cp .env.example .env
-# Edit .env with your database credentials
-```
-
-**5. Run migrations**
-```bash
-python manage.py migrate
-```
-
-**6. Seed database**
-```bash
-python manage.py seed
-```
-
-**7. Run server**
-```bash
-python manage.py runserver
-```
-
-#### 🐳 Docker
-
-```bash
-docker-compose up --build
-```
-
-#### 📚 API Documentation
-
-After running the server, visit: http://127.0.0.1:8000/api/docs/
-
-#### 👤 Default Users (after seed)
-
-| Role | Username | Password |
-|---|---|---|
-| Admin | admin | admin12345 |
-| Teacher | teacher_sardor | test12345 |
-| Student | student_ali | test12345 |
-
-#### 🔑 API Endpoints
-
-| Module | Endpoint | Methods |
-|---|---|---|
-| Auth | `/api/auth/login/` | POST |
-| Auth | `/api/auth/refresh/` | POST |
-| Auth | `/api/auth/me/` | GET |
-| Students | `/api/students/` | GET, POST |
-| Teachers | `/api/teachers/` | GET, POST |
-| Courses | `/api/courses/` | GET, POST |
-| Groups | `/api/groups/` | GET, POST |
-| Attendance | `/api/attendance/` | GET, POST |
-| Assignments | `/api/assignments/` | GET, POST |
-| Payments | `/api/payments/` | GET, POST |
-| Notifications | `/api/notifications/` | GET, POST |
-| Dashboard | `/api/dashboard/` | GET |
-
-</div>
+| 🔐 Auth | JWT asosida kirish, rol bo'yicha ruxsat (Admin, Teacher, Student) |
+| 👨‍🎓 O'quvchilar | To'liq CRUD, profil boshqaruvi, filter va qidiruv |
+| 👨‍🏫 O'qituvchilar | To'liq CRUD, fan va maosh kuzatuvi |
+| 📚 Kurslar | Kurs boshqaruvi, narx va davomiylik |
+| 👥 Guruhlar | Guruh boshqaruvi, jadval, o'quvchi biriktirish |
+| ✅ Davomat | Ommaviy davomat belgilash, statistika |
+| 📝 Topshiriqlar | Yaratish, yuborish, baholash zanjiri |
+| 💰 To'lovlar | Qo'lda to'lov, qarzdorlar ro'yxati, daromad statistikasi |
+| 🔔 Bildirishnomalar | Foydalanuvchi xabarlari tizimi |
+| 📊 Dashboard | Admin uchun umumiy statistika |
 
 ---
 
-## Русский
-
-<div id="russian">
-
-### 🎓 EduCRM — Система управления учебным центром
-
-Комплексная CRM-система для учебных центров, разработанная на Django REST Framework.
-
-#### 🚀 Возможности
-
-- **Аутентификация** — JWT-авторизация с ролевым доступом
-- **Студенты** — Полный CRUD с управлением профилями
-- **Преподаватели** — Полный CRUD с отслеживанием предмета и зарплаты
-- **Курсы** — Управление курсами с ценообразованием
-- **Группы** — Управление группами с расписанием и записью студентов
-- **Посещаемость** — Массовое отслеживание посещаемости со статистикой
-- **Задания** — Создание, сдача и оценка заданий
-- **Платежи** — Ручное отслеживание платежей с мониторингом долгов
-- **Уведомления** — Система уведомлений пользователей
-- **Дашборд** — Обзор статистики для администратора
-
-#### 📦 Установка
-
-**1. Клонировать репозиторий**
-```bash
-git clone https://github.com/rayhon-dev/crm-platform-mvp.git
-cd crm-platform-mvp
-```
-
-**2. Создать виртуальное окружение**
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-```
-
-**3. Установить зависимости**
-```bash
-pip install -r requirements.txt
-```
-
-**4. Настроить переменные окружения**
-```bash
-cp .env.example .env
-# Заполните .env данными вашей базы данных
-```
-
-**5. Выполнить миграции**
-```bash
-python manage.py migrate
-```
-
-**6. Заполнить базу данных тестовыми данными**
-```bash
-python manage.py seed
-```
-
-**7. Запустить сервер**
-```bash
-python manage.py runserver
-```
-
-#### 🐳 Docker
-
-```bash
-docker-compose up --build
-```
-
-#### 📚 Документация API
-
-После запуска сервера перейдите по адресу: http://127.0.0.1:8000/api/docs/
-
-#### 👤 Пользователи по умолчанию (после seed)
-
-| Роль | Логин | Пароль |
-|---|---|---|
-| Администратор | admin | admin12345 |
-| Преподаватель | teacher_sardor | test12345 |
-| Студент | student_ali | test12345 |
-
-</div>
+## 🛠 Texnologiyalar
+Backend:    Python 3.12, Django 6.0, Django REST Framework
+Database:   PostgreSQL 17
+Auth:       JWT (djangorestframework-simplejwt)
+Docs:       Swagger (drf-spectacular)
+Admin:      Django Admin + Jazzmin
+Docker:     Docker + Docker Compose
 
 ---
 
-## O'zbekcha
+## 📦 O'rnatish
 
-<div id="uzbek">
-
-### 🎓 EduCRM — O'quv Markaz Boshqaruv Tizimi
-
-Django REST Framework asosida qurilgan o'quv markazlari uchun kompleks CRM tizimi.
-
-#### 🚀 Imkoniyatlar
-
-- **Autentifikatsiya** — Rol asosida JWT autentifikatsiya
-- **O'quvchilar** — To'liq CRUD va profil boshqaruvi
-- **O'qituvchilar** — To'liq CRUD, fan va maosh kuzatuvi
-- **Kurslar** — Narx bilan kurs boshqaruvi
-- **Guruhlar** — Jadval va o'quvchi biriktirish bilan guruh boshqaruvi
-- **Davomat** — Statistika bilan ommaviy davomat kuzatuvi
-- **Topshiriqlar** — Topshiriq yaratish, yuborish va baholash tizimi
-- **To'lovlar** — Qarzdorlik monitoringi bilan qo'lda to'lov kuzatuvi
-- **Bildirishnomalar** — Foydalanuvchi bildirishnoma tizimi
-- **Dashboard** — Admin statistika paneli
-
-#### 📦 O'rnatish
+### Lokal muhitda
 
 **1. Repozitoriyani klonlash**
 ```bash
@@ -242,8 +60,12 @@ cd crm-platform-mvp
 **2. Virtual muhit yaratish**
 ```bash
 python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
+
+# Windows
+venv\Scripts\activate
+
+# Linux / Mac
+source venv/bin/activate
 ```
 
 **3. Paketlarni o'rnatish**
@@ -254,10 +76,17 @@ pip install -r requirements.txt
 **4. Muhit o'zgaruvchilarini sozlash**
 ```bash
 cp .env.example .env
-# .env faylini ma'lumotlar bazasi ma'lumotlari bilan to'ldiring
 ```
 
-**5. Migratsiyalarni bajarish**
+`.env` faylni oching va quyidagilarni to'ldiring:
+SECRET_KEY=your-secret-key
+DB_NAME=educrm_db
+DB_USER=postgres
+DB_PASSWORD=your-password
+DB_HOST=localhost
+DB_PORT=5432
+
+**5. Ma'lumotlar bazasini yaratish**
 ```bash
 python manage.py migrate
 ```
@@ -272,25 +101,86 @@ python manage.py seed
 python manage.py runserver
 ```
 
-#### 🐳 Docker
+---
+
+### Docker bilan
 
 ```bash
 docker-compose up --build
 ```
 
-#### 📚 API Hujjatlari
+---
 
-Serverni ishga tushirgandan so'ng: http://127.0.0.1:8000/api/docs/
+## 📚 API Hujjatlari
 
-#### 👤 Standart foydalanuvchilar (seed dan keyin)
+Server ishga tushgandan so'ng Swagger orqali barcha endpointlarni ko'rish mumkin:
+http://127.0.0.1:8000/api/docs/
+
+---
+
+## 👤 Standart foydalanuvchilar
+
+Seed dan keyin quyidagi foydalanuvchilar avtomatik yaratiladi:
 
 | Rol | Username | Parol |
 |---|---|---|
 | Admin | admin | admin12345 |
 | O'qituvchi | teacher_sardor | test12345 |
+| O'qituvchi | teacher_malika | test12345 |
 | O'quvchi | student_ali | test12345 |
+| O'quvchi | student_aziz | test12345 |
 
-</div>
+---
+
+## 🔑 Asosiy API Endpointlar
+POST   /api/auth/login/              → Tizimga kirish
+POST   /api/auth/refresh/            → Tokenni yangilash
+GET    /api/auth/me/                 → O'z ma'lumotlari
+GET    /api/students/                → O'quvchilar ro'yxati
+POST   /api/students/                → O'quvchi yaratish
+GET    /api/teachers/                → O'qituvchilar ro'yxati
+POST   /api/teachers/                → O'qituvchi yaratish
+GET    /api/courses/                 → Kurslar ro'yxati
+POST   /api/courses/                 → Kurs yaratish
+GET    /api/groups/                  → Guruhlar ro'yxati
+POST   /api/groups/                  → Guruh yaratish
+POST   /api/groups/{id}/add_student/ → Guruhga o'quvchi qo'shish
+POST   /api/groups/{id}/add_schedule/→ Guruhga jadval qo'shish
+POST   /api/attendance/bulk/         → Ommaviy davomat belgilash
+GET    /api/attendance/              → Davomat ro'yxati
+GET    /api/assignments/             → Topshiriqlar ro'yxati
+POST   /api/assignments/             → Topshiriq yaratish
+POST   /api/assignments/{id}/submit/ → Topshiriq yuborish
+POST   /api/submissions/{id}/grade/  → Baho qo'yish
+GET    /api/payments/                → To'lovlar ro'yxati
+POST   /api/payments/                → To'lov kiritish
+GET    /api/payments/debtors/        → Qarzdorlar ro'yxati
+GET    /api/payments/summary/        → Daromad statistikasi
+GET    /api/dashboard/               → Umumiy statistika
+
+---
+
+## 🗂 Loyiha Strukturasi
+crm-platform-mvp/
+├── apps/
+│   ├── users/          → Foydalanuvchilar, auth, permissions
+│   ├── students/       → O'quvchilar
+│   ├── teachers/       → O'qituvchilar
+│   ├── courses/        → Kurslar
+│   ├── groups/         → Guruhlar, jadval
+│   ├── attendance/     → Davomat
+│   ├── assignments/    → Topshiriqlar, javoblar, baholar
+│   ├── payments/       → To'lovlar
+│   └── notifications/  → Bildirishnomalar
+├── config/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── .env.example
+├── docker-compose.yml
+├── Dockerfile
+├── manage.py
+└── requirements.txt
 
 ---
 
