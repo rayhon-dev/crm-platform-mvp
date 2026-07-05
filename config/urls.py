@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from apps.users.dashboard import DashboardView
 
 
 urlpatterns = [
@@ -20,4 +21,5 @@ urlpatterns = [
     path('api/', include('apps.assignments.urls')),
     path('api/payments/', include('apps.payments.urls')),
     path('api/notifications/', include('apps.notifications.urls')),
+    path('api/dashboard/', DashboardView.as_view(), name='dashboard'),
 ]
